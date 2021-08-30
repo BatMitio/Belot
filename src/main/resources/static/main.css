@@ -1,0 +1,14 @@
+#welcomeMessage{
+    display: none;
+}
+
+#authenticationSection{
+    display: none;
+}
+
+#loginError{
+    display: none;
+}
+#registrationError{
+    display: none;
+}
