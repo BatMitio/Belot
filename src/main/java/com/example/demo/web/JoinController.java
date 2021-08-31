@@ -14,6 +14,7 @@ public class JoinController {
     public Response join(@RequestBody JoinBodyDTO body,
                          @RequestHeader("username") String username,
                          @RequestHeader("X-Authorization") String token){
+        String gameId = body.gamePin;
         return new Response("No", new JoinResponseDTO());
     }
 }
