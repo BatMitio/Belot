@@ -56,7 +56,9 @@ export async function login(username, password) {
         password
     });
 
-    console.log(response);
+    if(response.message != "Login successful!"){
+        return response;
+    }
 
     localStorage.setItem("token", response.data.token);
     localStorage.setItem("username", response.data.username);
@@ -70,7 +72,9 @@ export async function register(username, password){
         password
     });
 
-    console.log(response);
+    if(response.message != "Registration successful!"){
+        return response;
+    }
 
     localStorage.setItem("token", response.data.token);
     localStorage.setItem("username", response.data.username);
@@ -80,6 +84,10 @@ export async function register(username, password){
 
 export async function logout(){
     const response = await get('/logout');
+
+    if(response.message != "Logout successful!"){
+        return response;
+    }
 
     localStorage.clear();
 

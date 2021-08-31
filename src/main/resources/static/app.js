@@ -57,7 +57,7 @@ function init(){
             }, errorTimeout);
         } else {
             let response = await api.register(username, password);
-            if(response.message = "Registration successful!"){
+            if(response.message == "Registration successful!"){
                 showHome();
             }
             else {
@@ -84,4 +84,7 @@ function init(){
     $("#createGameButton").click(e => {
         e.preventDefault();
     });
+    $("#registerUsername").change(e => {
+        
+    })
 }

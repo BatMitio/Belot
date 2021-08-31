@@ -45,4 +45,8 @@ public class PlayersRepository {
         }
         return null;
     }
+
+    public boolean usernameAvailable(String username) {
+        return !players.containsKey(username);
+    }
 }
