@@ -1,6 +1,7 @@
 package com.example.demo.web;
 
 import com.example.demo.dtos.JoinBodyDTO;
+import com.example.demo.dtos.JoinResponseDTO;
 import com.example.demo.entities.Response;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,6 +15,6 @@ public class JoinController {
                          @RequestHeader("username") String username,
                          @RequestHeader("X-Authorization") String token){
         String gameId = body.gamePin;
-
+        return new Response("No", new JoinResponseDTO());
     }
 }
