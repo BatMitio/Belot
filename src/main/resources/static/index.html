@@ -2,8 +2,11 @@
 <html>
 <head>
     <title>Hello WebSocket</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+            crossorigin="anonymous"></script>
     <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/main.css" rel="stylesheet">
     <script src="/webjars/jquery/jquery.min.js"></script>
@@ -15,40 +18,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being
-    enabled. Please enable
-    Javascript and reload this page!</h2></noscript>
 <div id="home" class="container">
-    <div id="welcomeMessage">
+    <div id="welcomeMessage" class="row">
         <p>Welcome, <span id="clientName"></span>!</p>
         <button id="logoutButton">Logout</button>
         <form id="joinGameForm">
             <label for="roomPin">Room PIN: </label>
-            <input type="text" id="roomPin" name="text">
-            <input type="submit" value="Join">
+            <input type="text" class="form-control" id="roomPin" name="text">
+            <button type="submit" class="btn btn-primary">Join</button>
         </form>
         <button id="createGameButton">Create game!</button>
     </div>
-    <div id="authenticationSection">
+    <div id="authenticationSection" class="row">
         <h2>Please login or register!</h2>
-        <form id="loginForm">
-            <p id="loginError">All fields are required!</p>
-            <label for="loginUsername">Username: </label>
-            <input type="text" id="loginUsername" name="username">
-            <label for="loginPassword">Password: </label>
-            <input type="password" id="loginPassword" name="password">
-            <input type="submit" value="Login">
-        </form>
-        <form id="registrationForm">
-            <p id="registrationError">All fields are required!</p>
-            <label for="registerUsername">Username: </label>
-            <input type="text" id="registerUsername" name="username">
-            <label for="registerPassword">Password: </label>
-            <input type="password" id="registerPassword" name="password">
-            <label for="rePass">Repeat password: </label>
-            <input type="password" id="rePass" name="rePass">
-            <input type="submit" value="Register">
-        </form>
+        <div class="col">
+            <form id="loginForm" class="form-inline" role="form">
+                <p id="loginError">All fields are required!</p>
+                <div class="form-group">
+                    <label for="loginUsername">Username: </label>
+                    <input type="text" class="form-control" id="loginUsername" name="username">
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password: </label>
+                    <input type="password" class="form-control" id="loginPassword" name="password">
+                </div>
+                <button type="submit" class="btn btn-success">Login</button>
+            </form>
+        </div>
+        <div class="col">
+            <form id="registrationForm" class="form-inline" role="form">
+                <p id="registrationError">All fields are required!</p>
+                <div class="form-group">
+                    <label for="registerUsername">Username: </label>
+                    <input type="text" class="form-control" id="registerUsername" name="username">
+                </div>
+                <div class="form-group">
+                <label for="registerPassword">Password: </label>
+                <input type="password" class="form-control" id="registerPassword" name="password">
+                </div>
+                <div class="form-group">
+                <label for="rePass">Repeat password: </label>
+                <input type="password" class="form-control" id="rePass" name="rePass">
+                </div>
+                <button type="submit" class="btn btn-success">Register</button>
+            </form>
+        </div>
+
     </div>
 </div>
 </body>
