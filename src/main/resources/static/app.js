@@ -70,5 +70,18 @@ function init(){
         e.preventDefault();
         await api.logout();
         showHome();
-    })
+    });
+    $("#joinGameForm").submit(async e => {
+        e.preventDefault();
+        let formData = new FormData(e.target);
+        let gamePin = formData.get("roomPin").trim();
+        let response = await api.post('/join', {gamePin});
+        if(response.message == "Successfully joined!"){
+            window.href = '/game';
+        }
+        alert(response.message);
+    });
+    $("#createGameButton").click(e => {
+        e.preventDefault();
+    });
 }
