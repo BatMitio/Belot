@@ -1,7 +1,7 @@
-package com.example.demo.utils;
+package com.example.demo.sockets;
 
-import com.example.demo.frames.ClientFrame;
-import com.example.demo.frames.TeamFrame;
+import com.example.demo.sockets.frames.ClientFrame;
+import com.example.demo.sockets.frames.TeamFrame;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 

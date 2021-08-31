@@ -1,14 +1,15 @@
-package com.example.demo.dtos;
+package com.example.demo.dtos.implementations;
 
+import com.example.demo.dtos.interfaces.DTO;
 import com.example.demo.entities.Card;
 import com.example.demo.entities.Player;
 
-import java.util.List;
+import java.util.Set;
 
 public class PlayerDTO implements DTO {
     public String username;
     public String token;
-    public List<Card> cards;
+    public Set<Card> cards;
 
     public PlayerDTO() {
     }
@@ -19,7 +20,7 @@ public class PlayerDTO implements DTO {
         this.cards = player.getCards();
     }
 
-    public PlayerDTO(String username, String token, List<Card> cards) {
+    public PlayerDTO(String username, String token, Set<Card> cards) {
         this.username = username;
         this.token = token;
         this.cards = cards;

@@ -1,8 +1,10 @@
 package com.example.demo.entities;
 
-import com.example.demo.dtos.DTO;
+import javax.persistence.*;
 
-public class Card {
+@Entity
+@Table(name = "cards")
+public class Card extends BaseEntity {
     private String name;
 
     public Card() {
@@ -13,6 +15,7 @@ public class Card {
         this.name = name;
     }
 
+    @Column(name = "name")
     public String getName() {
         return name;
     }

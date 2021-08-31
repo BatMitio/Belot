@@ -1,31 +1,38 @@
 package com.example.demo.entities;
 
-import com.example.demo.dtos.DTO;
+import com.example.demo.utils.PlayerConverter;
+import org.hibernate.annotations.LazyCollection;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import javax.persistence.*;
+import java.util.*;
 
-public class Player {
+@Entity
+@Table(name = "players")
+public class Player extends BaseEntity {
     private String username;
     private String password;
-    private UUID token;
-    private List<Card> cards;
+    private String token;
+    private Set<Card> cards;
 
     public Player(String username, String password) {
         this.username = username;
         this.password = password;
-        this.token = UUID.randomUUID();
-        this.cards = new ArrayList<>();
+        this.token = UUID.randomUUID().toString();
+        this.cards = new HashSet<>();
     }
 
-    public Player(String username, String password, UUID token, List<Card> cards) {
+    public Player(String username, String password, UUID token, Set<Card> cards) {
         this.username = username;
         this.password = password;
-        this.token = token;
+        this.token = token.toString();
         this.cards = cards;
     }
 
+    public Player() {
+
+    }
+
+    @Column(name = "username")
     public String getUsername() {
         return username;
     }
@@ -34,22 +41,25 @@ public class Player {
         this.username = username;
     }
 
-    public UUID getToken() {
+    @Column(name = "token")
+    public String getToken() {
         return token;
     }
 
-    public void setToken(UUID token) {
+    public void setToken(String token) {
         this.token = token;
     }
 
-    public List<Card> getCards() {
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    public Set<Card> getCards() {
         return cards;
     }
 
-    public void setCards(List<Card> cards) {
+    public void setCards(Set<Card> cards) {
         this.cards = cards;
     }
 
+    @Column(name = "password")
     public String getPassword() {
         return password;
     }
@@ -57,4 +67,5 @@ public class Player {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }

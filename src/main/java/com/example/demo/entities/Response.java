@@ -1,6 +1,6 @@
 package com.example.demo.entities;
 
-import com.example.demo.dtos.DTO;
+import com.example.demo.dtos.interfaces.DTO;
 
 public class Response {
     public String message;

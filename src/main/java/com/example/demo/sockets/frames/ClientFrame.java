@@ -1,6 +1,6 @@
-package com.example.demo.frames;
+package com.example.demo.sockets.frames;
 
-import com.example.demo.entities.Event;
+import com.example.demo.sockets.Event;
 import com.example.demo.entities.Card;
 
 import java.util.List;
