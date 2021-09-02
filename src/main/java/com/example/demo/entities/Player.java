@@ -7,12 +7,12 @@ import javax.persistence.*;
 import java.util.*;
 
 @Entity
-@Table(name = "players")
 public class Player extends BaseEntity {
     private String username;
     private String password;
     private String token;
     private Set<Card> cards;
+    private Game game;
 
     public Player(String username, String password) {
         this.username = username;
@@ -32,7 +32,6 @@ public class Player extends BaseEntity {
 
     }
 
-    @Column(name = "username")
     public String getUsername() {
         return username;
     }
@@ -41,7 +40,6 @@ public class Player extends BaseEntity {
         this.username = username;
     }
 
-    @Column(name = "token")
     public String getToken() {
         return token;
     }
@@ -59,7 +57,6 @@ public class Player extends BaseEntity {
         this.cards = cards;
     }
 
-    @Column(name = "password")
     public String getPassword() {
         return password;
     }
@@ -68,4 +65,12 @@ public class Player extends BaseEntity {
         this.password = password;
     }
 
+    @OneToOne
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
 }
