@@ -12,75 +12,15 @@
     <script src="/webjars/jquery/jquery.min.js"></script>
     <script src="/webjars/sockjs-client/sockjs.min.js"></script>
     <script src="/webjars/stomp-websocket/stomp.min.js"></script>
-    <script type="module" src="/app.js"></script>
+    <script src="/webjars/handlebars/4.0.2/handlebars.js"></script>
+    <script src="/webjars/page/1.11.3/page.js"></script>
+    <script type="module" src="./js/app.js"></script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<div id="home" class="container">
-    <div id="welcomeMessage" class="row">
-        <h2 class="text-center">Welcome, <span id="clientName"></span>!</h2>
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
-            <form id="joinGameForm">
-                <div class="form-group">
-                    <label for="roomPin" class="text-center">Room PIN: </label>
-                    <input type="text" class="form-control" id="roomPin" name="roomPin">
-                    <input type="submit" class="form-control btn btn-primary" value="Join">
-                </div>
-            </form>
-        </div>
-        <div class="col-md-4"></div>
-        <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-4 text-center">
-                <button id="createGameButton" class="btn btn-success">Create game!</button>
-                <button id="logoutButton" class="btn btn-danger">Logout</button>
-            </div>
-            <div class="col-md-4"></div>
-        </div>
-    </div>
-    <div id="authenticationSection">
-        <div class="row">
-            <div class="col-sm-3"></div>
-            <div class="col-md-3">
-                <h2 class="text-center">Login</h2>
-                <form id="loginForm">
-                    <p id="loginError">All fields are required!</p>
-                    <div class="form-group">
-                        <label for="loginUsername">Username: </label>
-                        <input type="text" class="form-control" id="loginUsername" name="username">
-                    </div>
-                    <div class="form-group">
-                        <label for="loginPassword">Password: </label>
-                        <input type="password" class="form-control" id="loginPassword" name="password">
-                    </div>
-                    <button type="submit" class="btn btn-success">Login</button>
-                </form>
-            </div>
-            <div class="col-md-3">
-                <h2 class="text-center">Register</h2>
-                <form id="registrationForm">
-                    <p id="registrationError">All fields are required!</p>
-                    <div class="form-group">
-                        <label for="registerUsername">Username: </label>
-                        <input type="text" class="form-control" id="registerUsername" name="username">
-                    </div>
-                    <div class="form-group">
-                        <label for="registerPassword">Password: </label>
-                        <input type="password" class="form-control" id="registerPassword" name="password">
-                    </div>
-                    <div class="form-group">
-                        <label for="rePass">Repeat password: </label>
-                        <input type="password" class="form-control" id="rePass" name="rePass">
-                    </div>
-                    <button type="submit" class="btn btn-success">Register</button>
-                </form>
-            </div>
-            <div class="col-sm-3"></div>
-        </div>
-    </div>
+<div id="container" class="container">
 </div>
 </body>
 </html>

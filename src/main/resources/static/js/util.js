@@ -97,7 +97,6 @@ export async function logout(){
 export async function validCredentials(){
     if(localStorage.getItem("token") != null){
         let response = await get('/validate_credentials');
-        console.log(response);
 
         if(response.message == "Valid credentials!"){
             return true;

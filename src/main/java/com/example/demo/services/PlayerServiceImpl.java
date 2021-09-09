@@ -15,6 +15,9 @@ public class PlayerServiceImpl implements PlayerService {
 
     @Override
     public Player login(String username, String password) {
+        if(!playerRepository.existsByUsername(username)){
+            return null;
+        }
         Player player = playerRepository.getByUsername(username);
         String hashedPassword = Encoder.encode(password);
         if(player.getPassword().equals(hashedPassword)){
@@ -25,7 +28,7 @@ public class PlayerServiceImpl implements PlayerService {
 
     @Override
     public boolean usernameAvailable(String username) {
-        return playerRepository.usernameAvailable(username);
+        return !playerRepository.existsByUsername(username);
     }
 
     @Override

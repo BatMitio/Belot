@@ -4,6 +4,8 @@ import com.example.demo.utils.Contract;
 import com.example.demo.utils.Overbid;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -22,6 +24,21 @@ public class Game{
     private Contract currentContract;
     private Overbid currentOverbid;
     private int lastTeamToCall;
+
+    public Game() {
+        this.players = new ArrayList<>();
+        this.deck = new HashSet<>();
+        this.team1Deck = new HashSet<>();
+        this.team2Deck = new HashSet<>();
+        this.playerToCut = 0;
+        this.team1currentPoints = 0;
+        this.team2currentPoints = 0;
+        this.team1totalPoints = 0;
+        this.team2totalPoints = 0;
+        this.currentContract = null;
+        this.currentOverbid = null;
+        this.lastTeamToCall = 0;
+    }
 
     @Id
     @SequenceGenerator(name = "sequence", initialValue = 100000)

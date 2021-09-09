@@ -1,11 +1,3 @@
-#welcomeMessage{
-    display: none;
-}
-
-#authenticationSection{
-    display: none;
-}
-
 #loginError{
     display: none;
 }
