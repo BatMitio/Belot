@@ -61,11 +61,7 @@ function showLogged(username) {
         e.preventDefault();
         let formData = new FormData(e.target);
         let gamePin = formData.get("roomPin").trim();
-        let response = await api.post('/join', {gamePin});
-        if (response.message == "Successfully joined!") {
-            page('/game/' + gamePin);
-        }
-        alert(response.message);
+        page('/game/' + gamePin);
     });
     $("#createGameButton").click(async e => {
         e.preventDefault();

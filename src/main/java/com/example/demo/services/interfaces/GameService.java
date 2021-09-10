@@ -7,4 +7,6 @@ public interface GameService {
     Game join(Long gameId, Player player);
 
     Game create();
+
+    Game getGame(Long id);
 }

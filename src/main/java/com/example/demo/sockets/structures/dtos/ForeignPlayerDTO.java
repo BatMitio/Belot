@@ -1,9 +1,9 @@
-package com.example.demo.dtos.implementations;
+package com.example.demo.sockets.structures.dtos;
 
-import com.example.demo.dtos.interfaces.DTO;
 import com.example.demo.entities.Player;
+import com.example.demo.sockets.structures.interfaces.Data;
 
-public class ForeignPlayerDTO implements DTO {
+public class ForeignPlayerDTO implements Data {
     public String username;
     public int cardsCount;
 

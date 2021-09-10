@@ -4,3 +4,12 @@
 #registrationError{
     display: none;
 }
+
+img{
+    width: 150px;
+    height: auto;
+    position: absolute;
+}
+.imageHolder{
+    padding-top: 250px;
+}

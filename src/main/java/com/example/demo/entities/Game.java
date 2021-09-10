@@ -51,7 +51,7 @@ public class Game{
         this.id = id;
     }
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "game")
     public List<Player> getPlayers() {
         return players;
     }

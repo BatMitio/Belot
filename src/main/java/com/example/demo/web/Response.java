@@ -1,4 +1,4 @@
-package com.example.demo.entities;
+package com.example.demo.web;
 
 import com.example.demo.dtos.interfaces.DTO;
 

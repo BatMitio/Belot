@@ -1,8 +1,5 @@
 package com.example.demo.entities;
 
-import com.example.demo.utils.PlayerConverter;
-import org.hibernate.annotations.LazyCollection;
-
 import javax.persistence.*;
 import java.util.*;
 
@@ -65,7 +62,7 @@ public class Player extends BaseEntity {
         this.password = password;
     }
 
-    @OneToOne
+    @ManyToOne
     public Game getGame() {
         return game;
     }

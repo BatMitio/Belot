@@ -3,7 +3,6 @@ package com.example.demo.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "cards")
 public class Card extends BaseEntity {
     private String name;
 
@@ -15,7 +14,6 @@ public class Card extends BaseEntity {
         this.name = name;
     }
 
-    @Column(name = "name")
     public String getName() {
         return name;
     }

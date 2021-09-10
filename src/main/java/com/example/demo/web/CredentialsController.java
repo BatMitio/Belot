@@ -1,7 +1,6 @@
 package com.example.demo.web;
 
 import com.example.demo.dtos.implementations.PlayerDTO;
-import com.example.demo.entities.Response;
 import com.example.demo.entities.Player;
 import com.example.demo.services.interfaces.PlayerService;
 import org.springframework.beans.factory.annotation.Autowired;

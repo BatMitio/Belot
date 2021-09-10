@@ -3,9 +3,9 @@ package com.example.demo.web;
 import com.example.demo.dtos.implementations.JoinBodyDTO;
 import com.example.demo.entities.Game;
 import com.example.demo.entities.Player;
-import com.example.demo.entities.Response;
 import com.example.demo.services.interfaces.GameService;
 import com.example.demo.services.interfaces.PlayerService;
+import com.example.demo.sockets.GameEngine;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,6 +18,8 @@ public class JoinController {
     private GameService gameService;
     @Autowired
     private PlayerService playerService;
+    @Autowired
+    private GameEngine gameEngine;
 
     @PostMapping("/join")
     public Response join(@RequestBody JoinBodyDTO body,
@@ -28,6 +30,7 @@ public class JoinController {
         if(player != null){
             Game game = gameService.join(gameId, player);
             if(game != null){
+                gameEngine.playerJoined(gameId);
                 return new Response("Successfully joined!", null);
             }
             return new Response("No", null);
